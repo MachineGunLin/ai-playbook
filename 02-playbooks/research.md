@@ -4,7 +4,7 @@
 
 1. 先定义问题（一句话 + 验收标准），再开查。
 2. 官方文档/一手来源优先，社区内容只当线索。
-3. 每个结论 ≥2 独立来源；单来源的标“未 corroborated”。
+3. 关键/高风险结论尽量 ≥2 个独立来源互证；普通事实优先一手来源。单来源的标“未 corroborated”。
 4. 引用先验存在性再验支撑度（链接能打开 ≠ 内容支持结论）。
 5. 先出 deliverable 形状，缺什么再补查，不要无限检索。
 
@@ -91,7 +91,7 @@ research question（可验收）→ 来源分层检索（官方→论文→权�
 - [多 Agent 引用丢失定位（arXiv 2608.24306）](https://arxiv.org/pdf/2608.24306v1)
 - [Deep Research 方法论：taxonomy 与三层审计面（innogath）](https://innogath.com/learn/deep-research/)
 - [hashbulla deep-research 报告（GitHub，来源分层+检索管线）](https://github.com/hashbulla/deep-research/blob/main/deep-research-report.md)
-- [Nature：幻觉引用污染文献（2026-04，链接待验证）](https://www.nature.com/articles/d41586-026-00969-z)
+- [Nature：幻觉引用污染文献（2026-04）](https://www.nature.com/articles/d41586-026-00969-z)
 - [PromptForge：Deep Research 最佳实践 2026（何时不该用 + 选档启发式）](https://github.com/mbagalman/PromptForge/blob/main/guides/deep-research-best-practices-2026.md)
 - [Glukhov：Search vs Deep Search vs Deep Research（分档逻辑）](https://www.glukhov.org/rag/architecture/search-vs-deepsearch-vs-deep-research)
 - [Anthropic：多 agent 研究系统是怎么建的（工作量配比官方）](https://www.anthropic.com/engineering/built-multi-agent-research-system)

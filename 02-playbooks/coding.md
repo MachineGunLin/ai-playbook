@@ -30,7 +30,10 @@ spec（一句话目标+验收）→ plan（只读，审计划）→ implement（
 
 **双 Agent（为隔离，不为并行）：**
 
-- 最有价值的三组：implementer + reviewer（合并前质量门）、planner + executor（大改先只读出方案）、researcher + coder（先查清再动手）。
+- 最稳妥最常用：implementer + reviewer（合并前质量门，做的人不审）。
+- planner + executor 只在 plan 能形成一份完整、独立、可执行 artifact 时适合；否则 plan 传过去就散了。
+- researcher + coder（先查清再动手）适合未知多的任务。
+- 不要机械按 planner / implementer / tester / reviewer 拆多个 agent；值不值得拆，看 context boundary、任务独立性、并行收益，不看角色数量。
 - 规则：审查者只看 diff + 验收标准，看不到实现推理；verifier 必须有明确标准，否则只是 rubber-stamp（Anthropic 协调模式官方）。
 - 成本：约多一轮转述 + 一次合成；视角收益大于此才用。
 
