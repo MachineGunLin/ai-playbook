@@ -1,6 +1,6 @@
 # Multi-agent：拆活、隔离与协作
 
-> 原 `subagents.md` 已并入本篇。拆活边界看第 1–2 节，分工模式看第 3 节，铁律看第 4 节。
+> 拆活边界看第 1–2 节，分工模式看第 3 节，铁律看第 4 节。
 
 ## 1. 什么适合拆出去
 
@@ -25,7 +25,7 @@
 - 一块代码同一时间只属于一个写作者；并行写同一仓必须 worktree 隔离。
 - 拆之前划边界：谁负责哪些文件/目录、输出格式是什么（清单 or diff or 报告一页）。
 - 主会话只做拆活和验收；subagent 回来只收摘要（结论 + 文件:行号 + 证据链），不收全文转述。
-- 交接用文件不用口头（见 `../../04-recipes/handoff.md`），聊天记录不跨会话。
+- 交接用文件不用口头（见 [handoff.md](../04-recipes/handoff.md)），聊天记录不跨会话。
 - 两个 agent 结论冲突时，人拍板，不要让它们互相对话解决。
 
 ## 5. 各工具入口
@@ -34,7 +34,7 @@ Claude `/subtask`（回本会话）·`/fork`（后台）·`/batch`（仓库级�
 
 ## 6. 相关
 
-- 上下文保持干净见 `context.md`，跨会话落盘见 `memory.md`。
-- 合并前审查见 `../../04-recipes/code-review.md`，长任务见 `../../04-recipes/long-running-task.md`。
+- 上下文保持干净见 [context.md](context.md)，跨会话落盘见 [memory.md](memory.md)。
+- 合并前审查见 [code-review.md](../04-recipes/code-review.md)，长任务见 [long-running-task.md](../04-recipes/long-running-task.md)。
 
 Last reviewed: 2026-10-01

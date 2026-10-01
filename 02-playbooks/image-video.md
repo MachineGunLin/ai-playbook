@@ -1,6 +1,6 @@
 # Image & Video
 
-> 目前保持精简：只记“理解”和“生成”两类高效 workflow，模型选型以 `01-tools/ai-agents.md` 能力矩阵为准。
+> 目前保持精简：只记“理解”和“生成”两类高效 workflow，模型选型以 [01-tools/ai-agents.md](../01-tools/ai-agents.md) 能力矩阵为准。
 
 ## 10 秒速查
 

@@ -49,7 +49,7 @@
 ## AI / 模型选择
 
 家教对话：Claude（追问质量稳）、GPT-6 系。都不挑模型，挑 prompt 规则。
-需要引用教材原文：PDF/长文档强档（Claude/Gemini）。详见 `01-tools/ai-agents.md`。
+需要引用教材原文：PDF/长文档强档（Claude/Gemini）。详见 [ai-agents.md](../01-tools/ai-agents.md)。
 
 ## Prompt
 

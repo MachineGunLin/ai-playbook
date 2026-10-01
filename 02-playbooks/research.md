@@ -79,7 +79,7 @@ research question（可验收）→ 来源分层检索（官方→论文→权�
 
 一键深度调研：ChatGPT / Gemini / Claude 产品侧 DR；Grok `/deep-research`（内置并行查证）。
 自搭流程：Grok（Web+X）+ Claude/Gemini 合成；可疑引用人工抽查。
-时效强、要 X 信号：Grok。详见 `01-tools/ai-agents.md`。
+时效强、要 X 信号：Grok。详见 [ai-agents.md](../01-tools/ai-agents.md)。
 
 ## Prompt
 
@@ -91,7 +91,7 @@ research question（可验收）→ 来源分层检索（官方→论文→权�
 - [多 Agent 引用丢失定位（arXiv 2608.24306）](https://arxiv.org/pdf/2608.24306v1)
 - [Deep Research 方法论：taxonomy 与三层审计面（innogath）](https://innogath.com/learn/deep-research/)
 - [hashbulla deep-research 报告（GitHub，来源分层+检索管线）](https://github.com/hashbulla/deep-research/blob/main/deep-research-report.md)
-- [Nature：幻觉引用污染文献（2026-04）](https://www.nature.com/articles/d41586-026-00969-z)
+- [Nature：幻觉引用污染文献（2026-04，链接待验证）](https://www.nature.com/articles/d41586-026-00969-z)
 - [PromptForge：Deep Research 最佳实践 2026（何时不该用 + 选档启发式）](https://github.com/mbagalman/PromptForge/blob/main/guides/deep-research-best-practices-2026.md)
 - [Glukhov：Search vs Deep Search vs Deep Research（分档逻辑）](https://www.glukhov.org/rag/architecture/search-vs-deepsearch-vs-deep-research)
 - [Anthropic：多 agent 研究系统是怎么建的（工作量配比官方）](https://www.anthropic.com/engineering/built-multi-agent-research-system)

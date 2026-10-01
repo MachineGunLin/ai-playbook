@@ -6,7 +6,7 @@
 
 - 模型：吃进什么（文本/图/PDF/音视频）、吐出什么、context 多大、推理多强。
 - Harness：文件读写、shell、浏览器、MCP、subagent、PDF 解析、视频抽帧、STT——模型不行壳再强也没用；模型行但壳没接通道同样做不了。
-- 同一个模型换壳等于换能力（Codex / Claude Code / OpenCode 里的同一个 Claude 行为不同）。选型按“模型+壳”组合判断，见 `01-tools/ai-agents.md`。
+- 同一个模型换壳等于换能力（Codex / Claude Code / OpenCode 里的同一个 Claude 行为不同）。选型按“模型+壳”组合判断，见 [01-tools/ai-agents.md](../01-tools/ai-agents.md)。
 
 ## 好 Harness 的组成
 
@@ -22,9 +22,9 @@
 
 ## 落到自己身上
 
-- 写死的：`AGENTS.md`/`CLAUDE.md`/`GEMINI.md`（构建测试命令、目录规矩）。写到哪里、沉淀什么见 `memory.md`。
-- 按需的：skills（见 `skills.md`）、MCP（重服务每 turn 吃上万 token，不用就关）。
+- 写死的：`AGENTS.md`/`CLAUDE.md`/`GEMINI.md`（构建测试命令、目录规矩）。写到哪里、沉淀什么见 [memory.md](memory.md)。
+- 按需的：skills（见 [skills.md](skills.md)）、MCP（重服务每 turn 吃上万 token，不用就关）。
 - 护栏：bash 白名单 + 密钥路径双 deny；`--yolo`/danger 档只进一次性沙箱。
-- 习惯：compaction 开自动；关键结论落盘，不指望模型记住。止血细节见 `context.md`。
+- 习惯：compaction 开自动；关键结论落盘，不指望模型记住。止血细节见 [context.md](context.md)。
 
 Last reviewed: 2026-10-01

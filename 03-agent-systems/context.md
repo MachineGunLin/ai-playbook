@@ -1,6 +1,6 @@
 # Context：主会话保持干净，胀了就止血
 
-> 上下文是工作区，落盘是记忆。压缩只是止血，跨会话知识必须进文件（见 `memory.md`）。
+> 上下文是工作区，落盘是记忆。压缩只是止血，跨会话知识必须进文件（见 [memory.md](memory.md)）。
 
 ## 什么吃 context
 
@@ -19,12 +19,12 @@
 
 ## 各工具入口
 
-上下文查看与压缩命令见 `../../01-tools/ai-agents.md` → 命令速查（`/status`、`/context`、`/compact` 等按工具查）。
+上下文查看与压缩命令见 [01-tools/ai-agents.md](../01-tools/ai-agents.md) → 命令速查（`/status`、`/context`、`/compact` 等按工具查）。
 
 ## 相关
 
-- 跨会话落盘见 `memory.md`。
-- 拆活边界见 `multi-agent.md`。
-- 换会话/换工具交接见 `../../04-recipes/handoff.md`。
+- 跨会话落盘见 [memory.md](memory.md)。
+- 拆活边界见 [multi-agent.md](multi-agent.md)。
+- 换会话/换工具交接见 [04-recipes/handoff.md](../04-recipes/handoff.md)。
 
 Last reviewed: 2026-10-01

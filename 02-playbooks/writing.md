@@ -20,7 +20,7 @@
 | 阶段 | AI 扮演 | 人拍板 | 能否放手 |
 |---|---|---|---|
 | 选题/角度 | 发散选项 + 唱反调 | 选题、立场、目标读者 | 不放手（voice 来源） |
-| 调研 | 并行搜 + 整理成清单 | 来源偏好、验收标准 | 半放手（见 research.md） |
+| 调研 | 并行搜 + 整理成清单 | 来源偏好、验收标准 | 半放手（见 [research.md](research.md)） |
 | 大纲 | 出 2～3 版结构备选 | 拍板一版再动笔 | 不放手 |
 | 初稿 | 按种子句分节扩写 | 每节种子句 + 逐节审 | 半放手 |
 | 改稿 | 当 editor：清单式意见 + reviewable diff | 逐条接受/拒绝 | 半放手 |
@@ -80,7 +80,7 @@
 ## AI / 模型选择
 
 长文/中文写作：Claude（App 或 Code），备选 GPT-6 Sol。
-联网查资料边写：Grok、Gemini。详见 `01-tools/ai-agents.md`。
+联网查资料边写：Grok、Gemini。详见 [ai-agents.md](../01-tools/ai-agents.md)。
 
 ## Prompt
 

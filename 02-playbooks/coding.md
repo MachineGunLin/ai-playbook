@@ -53,10 +53,10 @@ spec（一句话目标+验收）→ plan（只读，审计划）→ implement（
 
 ## 常见场景
 
-- 修 bug → `04-recipes/debugging.md`（复现→假设→验证→修复→回归）。
-- 合并前 → `04-recipes/code-review.md`（实现与审查分离）。
-- 换会话/换工具 → `04-recipes/handoff.md`（交接包落盘）。
-- 长任务 → `04-recipes/long-running-task.md`。
+- 修 bug → [debugging.md](../04-recipes/debugging.md)（复现→假设→验证→修复→回归）。
+- 合并前 → [code-review.md](../04-recipes/code-review.md)（实现与审查分离）。
+- 换会话/换工具 → [handoff.md](../04-recipes/handoff.md)（交接包落盘）。
+- 长任务 → [long-running-task.md](../04-recipes/long-running-task.md)。
 - 全仓找东西 → 先让只读 subagent（explore）啃，回来只收文件清单+结论。
 - 迁移/重构 → `/batch` 类扇出（Claude）或 workflows（Grok），每块独立 worktree、独立 PR。
 
@@ -93,7 +93,7 @@ spec（一句话目标+验收）→ plan（只读，审计划）→ implement（
 
 repo 级：Codex、Claude Code（Opus 系）→ Grok Build、OpenCode+强模型。
 有截图：vision 档（Gemini/Claude/GPT-6/Grok 主模型/DeepSeek Vision 版）。
-便宜大 context 纯文本：DeepSeek Harness。详见 `01-tools/ai-agents.md`。
+便宜大 context 纯文本：DeepSeek Harness。详见 [ai-agents.md](../01-tools/ai-agents.md)。
 
 ## Prompt
 

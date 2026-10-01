@@ -24,7 +24,7 @@
 
 ## 哪些知识长期沉淀
 
-- 沉淀：构建/测试命令、代码规矩、发布 checklist、踩过的坑（进 `AGENTS.md` 或 skills）。完整落盘规则见 `memory.md`。
+- 沉淀：构建/测试命令、代码规矩、发布 checklist、踩过的坑（进 `AGENTS.md` 或 skills）。完整落盘规则见 [memory.md](memory.md)。
 - 不沉淀：当次任务的临时结论、日志 dump、猜测——留在会话里，用完即弃。
 
 Last reviewed: 2026-10-01
