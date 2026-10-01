@@ -16,6 +16,31 @@ research question（可验收）→ 来源分层检索（官方→论文→权�
 → 引用审计（抽查 10% 链接+支撑度）→ 行动结论
 ```
 
+## 快速 vs 深度（先选档，再开查）
+
+|  | 快速研究 | 深度研究 |
+|---|---|---|
+| 适用 | 快速了解、找方向、做初步判断 | 投资/技术选型/重要决策、长文素材 |
+| 时间 | 15～30 分钟，当场出结论 | 数小时～异步跑（含 2～30 分钟 agent 执行） |
+| 来源 | 3～8 个，官方 + 2 篇实战即可 | 数十～上百，覆盖官方/论文/权威媒体/社区线索 |
+| 验证 | 关键结论 2 来源互证即可 | 每句挂来源 + 10% 抽查 + 支撑度审计 |
+| Agent | 单会话问答，加 1 个 Web 工具 | 多 agent 并行 + 独立合成者 + 引用审计 |
+| 输出 | 半页结论 + 行动建议 | 结构化报告 + 来源清单 + 矛盾点单列 |
+| 产品 | 普通搜索/对话 + 联网即可 | 各家 Deep Research / `/deep-research` |
+
+快速流程（15～30 分钟）：
+
+```
+一句话问题 → 宽 query 摸全貌（3～5 个）→ 挑 3 个最好来源深读
+→ 写半页结论（观点 + 证据 + 不确定）→ 不够再升级深度
+```
+
+深度流程：走顶部“默认工作流”全套（分层检索 → 并行查证 → 矛盾对峙 → 合成挂源 → 引用审计 → 行动结论）。
+
+升级信号（出现一条就升级）：金额/风险大、各方说法矛盾、一手来源互相打架、结论要进长文或决策文档。
+
+不值得开重型的：单事实查询（何时发布/某数多少）、总结手头已有单文档、头脑风暴找灵感——用对话 + 搜索更快更准（PromptForge 实践）。
+
 ## 常见场景
 
 - 查工具/模型能力：官方文档 → release notes → GitHub；不确定写 Unknown，不猜。
@@ -38,6 +63,9 @@ research question（可验收）→ 来源分层检索（官方→论文→权�
 - 先宽后窄：短而宽的 query 先摸全貌，再收窄验证加深；检索到 plan 级别就迭代修正，不要一次发完所有 query（Perplexity/Anthropic 内部实践，转述自 hashbulla 报告）。
 - 保留三层审计面：来源清单（何时从哪取）→ 合成映射（每句出自哪段）→ 交付物引用（编辑后不断链）。只留交付物层的报告看着光鲜、经不起查（innogath）。
 - 先出 deliverable 形状：草稿先行，缺口驱动检索，而不是先堆资料（draft-first 纪律）。
+- 开工前先选档： plausibly 超过 ~5 次工具调用、或人类做要 1 小时以上，才值得开深度研究；否则快速档（PromptForge 实践，非厂商口径）。
+- 工作量按复杂度配：简单事实 1 agent + 3～10 次调用；直接对比 2～4 subagent 各 10～15 次；复杂调研 10+ subagent 且职责切分（Anthropic Research 系统官方）。
+- 结论前设 decision gate：写出“什么证据出现就推进/转向”，防检索漂移（ChatGPT DR 实战流程）。
 
 ## 常见错误
 
@@ -64,5 +92,9 @@ research question（可验收）→ 来源分层检索（官方→论文→权�
 - [Deep Research 方法论：taxonomy 与三层审计面（innogath）](https://innogath.com/learn/deep-research/)
 - [hashbulla deep-research 报告（GitHub，来源分层+检索管线）](https://github.com/hashbulla/deep-research/blob/main/deep-research-report.md)
 - [Nature：幻觉引用污染文献（2026-04）](https://www.nature.com/articles/d41586-026-00969-z)
+- [PromptForge：Deep Research 最佳实践 2026（何时不该用 + 选档启发式）](https://github.com/mbagalman/PromptForge/blob/main/guides/deep-research-best-practices-2026.md)
+- [Glukhov：Search vs Deep Search vs Deep Research（分档逻辑）](https://www.glukhov.org/rag/architecture/search-vs-deepsearch-vs-deep-research)
+- [Anthropic：多 agent 研究系统是怎么建的（工作量配比官方）](https://www.anthropic.com/engineering/built-multi-agent-research-system)
+- [Chernychko：ChatGPT Deep Research 可复用工作流（capture→决策门）](https://medium.com/@Chernukos/ai-use-case-8-using-chatgpt-as-a-research-and-discovery-co-pilot-3ccafdee3e13)
 
 Last reviewed: 2026-10-01

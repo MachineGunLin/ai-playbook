@@ -15,6 +15,35 @@
 → draft（分节写）→ edit（收紧、去 AI 味）→ fact check → 定稿
 ```
 
+## 角色分工（8阶段：谁动手、谁拍板）
+
+| 阶段 | AI 扮演 | 人拍板 | 能否放手 |
+|---|---|---|---|
+| 选题/角度 | 发散选项 + 唱反调 | 选题、立场、目标读者 | 不放手（voice 来源） |
+| 调研 | 并行搜 + 整理成清单 | 来源偏好、验收标准 | 半放手（见 research.md） |
+| 大纲 | 出 2～3 版结构备选 | 拍板一版再动笔 | 不放手 |
+| 初稿 | 按种子句分节扩写 | 每节种子句 + 逐节审 | 半放手 |
+| 改稿 | 当 editor：清单式意见 + reviewable diff | 逐条接受/拒绝 | 半放手 |
+| 事实核查 | 逐条溯源 + 标不确定 | 终稿前独立复核 | 不放手（单独一遍） |
+| 标题 | 出 10 个选项 | 挑 + 亲手改 | 生成可放手，拍板不放 |
+| 发布 | 按平台改写 + 排版检查 | 终读一遍 | 执行可放手 |
+
+## 标准 workflow（照着走）
+
+```
+0. voice capture（5～15 分钟口述，不打字）→ 转文字轻清洗
+1. brief（人写：读者 + 论点 + 范文 3 段 + 禁用词）
+2. outline（AI 出 2 版 → 人拍 1 版）
+3. seed draft（人写每节种子句 → AI 分节扩写，一节一审）
+4. edit（三遍分开：voice 遍 → 结构遍 → 文字遍，不混着改）
+5. fact check（独立一遍，数字逐条溯源）
+6. 定稿发布（标题 10 选 1；多平台改写后终读）
+```
+
+- 短文（<1500 字）：可全文一遍出，但仍要种子句 + 两遍 edit（voice + 事实）。
+- 长文：必须分节 + 维护术语表 + 上层改动传导到子节。
+- 社媒：先出口语稿/长文再压缩改写；不直接生成短版（细节先丢）。
+
 ## 常见场景
 
 - 卡开头：给 AI 三个论点+目标读者，让它各出一版开头，人挑一个接着写。
@@ -33,10 +62,13 @@
 - 人在环路：专家定大纲→AI 按节生成→人逐句改→引用逐条溯源，长书/论文都走这套（CoAuthorAI，Springer 已出版实例）。
 - AI 味的本质是“流畅但无观点”：保留自己的判断句、反常识钩子、具体经历，删掉 AI 的升华结尾和排比。
 
-**社区（值得学）：**
+**社区/实战（值得学）：**
 
 - 先让 AI 出=>[ ] 清单式审稿意见（结构/论证/例子/节奏），再逐条改，比“直接润色”质量高。
 - 定稿前做一次“观点剥离测试”：遮住署名还能认出是自己写的，才算保住 voice。
+- voice-first 输入：动笔前先口述 10～15 分钟粗糙想法转文字，让模型在你的推理上组织而不是替你发明观点；去 LLM 腔是独立的一遍（MindStudio 实战、Ryan Shrott）。
+- 严格 brief 才有可用初稿：范文 3 段 + 禁用词表 + 每篇必含四元素（亲历/具名例子/反常识/具体数字），缺一个亲手补（theStacc 混合写作环、Fyker 内容运营）。
+- 三权分立审稿：voice 遍、事实遍、编辑合成拆成独立 pass，写手不见原始反馈只收合成意见；配持续增长的 banned-phrase 表（Fyker/Peter Wong）。
 
 ## 常见错误
 
@@ -59,5 +91,9 @@
 - [Pinery：editor, not ghostwriter（产品方法论）](https://pinery.app/help/prose/write-a-book-with-ai)
 - [TreeWriter（arXiv 2601.12740，层级写作+实证）](https://arxiv.org/html/2601.12740)
 - [CoAuthorAI（arXiv 2604.19772，人在环路长文写作）](https://arxiv.org/abs/2604.19772)
+- [theStacc：Human + AI 混合写作环（实战流程）](https://thestacc.com/blog/human-ai-writing-hybrid)
+- [Lorka：Human-in-the-loop 5 步（实战流程）](https://www.lorka.ai/knowledge-hub/how-to-use-ai-for-better-writing)
+- [MindStudio：voice-first 防 AI 味（实战流程）](https://www.mindstudio.ai/blog/writing-with-ai-without-losing-voice)
+- [Fyker：AI 内容运营——自动化与人工的分工（实战）](https://www.fyxer.com/blog/ai-content-operations)
 
 Last reviewed: 2026-10-01
