@@ -1,0 +1,48 @@
+name: ebook
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.md"
+      - "scripts/**"
+      - ".github/workflows/ebook.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pandoc
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq pandoc
+      - name: Build EPUB
+        run: ./scripts/build-ebook.sh
+      - name: Validate EPUB
+        run: |
+          test -s dist/AI-Playbook.epub
+          python3 -c "import zipfile; z = zipfile.ZipFile('dist/AI-Playbook.epub'); assert z.read('mimetype') == b'application/epub+zip'"
+      - name: Publish to rolling release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=ebook-latest
+          FILE=dist/AI-Playbook.epub
+          # 先 build+validate 成功，才动公开入口；失败则旧 EPUB 原样保留
+          git tag -f "$TAG"
+          git push -f origin "$TAG"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$FILE" --clobber
+          else
+            gh release create "$TAG" "$FILE" \
+              --title "AI Playbook — Latest EPUB" \
+              --notes "EPUB auto-built from main ($(git rev-parse --short HEAD)). Full text: CC BY 4.0."
+          fi
+      - name: Upload EPUB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AI-Playbook-epub
+          path: dist/AI-Playbook.epub

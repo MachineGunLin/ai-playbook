@@ -6,7 +6,7 @@
 ## 能力矩阵（按工具实际可用性）
 
 > ✅=直接能做，⚠️=有条件/降级（看备注），❌=做不了，?=未确认。
-> 数据截至 2026-10-01；工具迭代快，关键结论以官方文档为准，`?` 项不要凭记忆补。
+> 数据截至 2026-10-02；工具迭代快，关键结论以官方文档为准，`?` 项不要凭记忆补。
 
 | 工具（实际入口） | 图片 | PDF/文档 | 普通文件/代码 | 视频 | 音频 | 联网搜索 | 深度调研 | 本地仓库 | 备注 |
 |---|---|---|---|---|---|---|---|---|---|
@@ -17,33 +17,33 @@
 | Antigravity | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 唯一真原生视频/音频（Gemini）；`ctrl+v` 贴截图/视频；`/browser` 子智能体调研 |
 | OpenCode（VS Code 插件/TUI） | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ✅ | 前提：选对模型（`/models` 实查）；联网看 MCP 配置；DR 靠 subagent 编排 |
 | Grok / Grok Build（终端 TUI） | ✅ | ⚠️ | ✅ | ⚠️ | ❌ | ✅ | ✅ | ✅ | 图片主模型原生（Build 专用版按❌）；PDF 走 file_search（RAG 式）；`/deep-research` 内置；Web+X 双工具是强项 |
-| DeepSeek Harness（终端 TUI） | ⚠️ | ❌ | ✅ | ❌ | ❌ | ⚠️ | ⚠️ | ✅ | 图片仅 Vision 版（其余 400）；联网靠 Harness web 工具；便宜大 context 纯文本是强项 |
+| DeepSeek Harness（终端 TUI） | ⚠️ | ❌ | ✅ | ❌ | ❌ | ⚠️ | ⚠️ | ✅ | 图片看当前 catalog/route 的 input modalities（如 deepseek-flash 声明 text+image 可发图，text-only 会拒）；联网靠 Harness web 工具；便宜大 context 纯文本是强项 |
 
 ## 该用哪个工具？
 
 | 任务 | 优先考虑 | 备选 | 避免使用 |
 |---|---|---|---|
-| 纯文本写作 | Claude、GPT-6 Sol | Gemini、Grok | 为写作单独切 DeepSeek |
+| 纯文本写作 | Claude、GPT-6.1 Sol（API / Codex 起 Pro 可用；旧入口按 `/model` 实查） | Gemini、Grok | 为写作单独切 DeepSeek |
 | coding（单文件/小改） | Codex、Claude Code、Grok Build | OpenCode + coding 模型 | 无图还行；DeepSeek 工具链弱 |
 | repo 级别修改 | Codex、Claude Code | Grok Build、OpenCode + 强模型 | 纯 API 对话框（无 Harness 的裸模型） |
-| 图片理解 / UI 截图分析 | Gemini、Claude 5 系、GPT-6 | Muse Spark、Grok 主模型、DeepSeek Vision 版 | DeepSeek 纯文本版、Grok Build 专用版 |
+| 图片理解 / UI 截图分析 | Gemini、Claude 5 系、GPT-6 | Muse Spark、Grok 主模型、DeepSeek image-capable 模型（按当前 catalog） | DeepSeek text-only route、Grok Build 专用版 |
 | PDF 阅读 | Claude、Gemini | GPT-6（产品侧工具）、Muse Spark | DeepSeek 全系（API 无原生 PDF） |
 | 视频 / 音频理解 | Gemini（唯一原生） | Muse Spark；音频先转文字再发任意模型 | OpenAI/Claude/Grok/DeepSeek 主模型 |
 | Web search（新鲜信息） | Grok（Web+X）、Gemini、ChatGPT/Codex | Claude 产品侧工具 | DeepSeek 裸调（走 Harness web 工具可补） |
 | 深度调研（多步骤） | 各家产品侧 Deep Research | Grok `/deep-research`、Claude/Grok 自搭流程 | 指望 API 模型一次答完 |
-| 大 context | Claude / Gemini / Muse / DeepSeek V4（1M） | Grok（500K） | OpenAI 系 context 数字未核验 |
+| 大 context | Claude / Gemini / Muse / DeepSeek（1M） | Grok（500K） | OpenAI GPT-6 系 1.05M（官方 models 页，2026-10-02） |
 | 长时间 Agent | Claude Opus、Codex、Muse Spark | Grok Build、Gemini | 纯文本小模型、无 Harness 的裸 API |
 | 快速便宜任务 | GPT-6 Luna、GPT-5.6 Terra/Luna、DeepSeek Flash | Gemini Flash-Lite、Haiku | Astra/Opus/Pro 大档 |
 
 ## 快速决策树
 
 ```
-有图片/截图？→ 只发 vision 行（Gemini / Claude / GPT-6 / Grok主模型 / DeepSeek Vision版 / Muse）
-有 PDF？→ 优先 Claude / Gemini；DeepSeek 全系先判 ❌
+有图片/截图？→ 只发 vision 行（Gemini / Claude / GPT-6 / Grok主模型 / DeepSeek image-capable 档 / Muse）
+有 PDF？→ 优先 Claude / Gemini；DeepSeek 先查当前 route 是否收文档
 有视频/音频？→ 优先 Gemini；其余默认不支持，音频先转文字
 要最新资料？→ 必须走带 Web 工具的产品/Harness，裸 API 不行
 纯 coding？→ Codex / Claude Code / Grok Build，别在聊天框里磨
-DeepSeek？→ 先确认是不是 Vision 版，非 Vision 版发图即 400
+DeepSeek？→ 先查当前 catalog/route 的 input modalities；text-only 发图会被拒
 不确定？→ 按 ❌ 处理，别猜；能转成纯文本就转成纯文本再发
 ```
 
@@ -149,4 +149,4 @@ DeepSeek？→ 先确认是不是 Vision 版，非 Vision 版发图即 400
 - Grok Build：[Overview](https://docs.x.ai/build/overview) · [Modes & Commands](https://docs.x.ai/build/modes-and-commands) · [Subagents](https://docs.x.ai/build/features/subagents)
 - DeepSeek Harness：官方 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) · 社区 [dsh-tui](https://github.com/nexlineai/dsh-tui)
 
-Last reviewed: 2026-10-01
+Last reviewed: 2026-10-02

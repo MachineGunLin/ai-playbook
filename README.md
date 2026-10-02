@@ -4,6 +4,8 @@
 
 按任务组织，不按厂商。工具会变，workflow 优先。
 
+📖 [Download latest EPUB](https://github.com/MachineGunLin/ai-playbook/releases/download/ebook-latest/AI-Playbook.epub)（main 自动构建，可导入微信读书 / Apple Books / Kindle）
+
 ## 我要做什么 → 打开哪个文件
 
 | 我要… | 打开 |
@@ -35,6 +37,15 @@
 04-recipes/       照着做的短流程
 05-prompts/       唯一 Prompt 出处
 06-troubleshooting/ 只记真踩过的坑
+```
+
+## Ebook
+
+EPUB 每次 main 更新后自动构建，上面下载链接永久有效。
+
+```bash
+brew install pandoc        # 只需一次
+./scripts/build-ebook.sh   # 本地产物：dist/AI-Playbook.epub（不进 Git）
 ```
 
 ## License

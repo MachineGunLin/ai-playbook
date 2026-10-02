@@ -79,7 +79,7 @@
 
 ## AI / 模型选择
 
-长文/中文写作：Claude（App 或 Code），备选 GPT-6 Sol。
+长文/中文写作：Claude（App 或 Code），备选 GPT-6.1 Sol。
 联网查资料边写：Grok、Gemini。详见 [ai-agents.md](../01-tools/ai-agents.md)。
 
 ## Prompt
@@ -96,4 +96,4 @@
 - [MindStudio：voice-first 防 AI 味（实战流程）](https://www.mindstudio.ai/blog/writing-with-ai-without-losing-voice)
 - [Fyker：AI 内容运营——自动化与人工的分工（实战）](https://www.fyxer.com/blog/ai-content-operations)
 
-Last reviewed: 2026-10-01
+Last reviewed: 2026-10-02

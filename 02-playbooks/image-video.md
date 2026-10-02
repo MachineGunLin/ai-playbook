@@ -4,7 +4,7 @@
 
 ## 10 秒速查
 
-1. 理解（看图/看视频）：只发真多模态档（Gemini 首选，其次 Claude/GPT-6/Grok 主模型/DeepSeek Vision 版）。
+1. 理解（看图/看视频）：只发真多模态档（Gemini 首选，其次 Claude/GPT-6/Grok 主模型/DeepSeek 按 catalog 选 image-capable 模型）。
 2. 生成（出图/剪视频）：走专用模型，不管对话模型多强。
 3. UI 改图：截图直贴 + 指位置 + 给约束，别转述界面。
 4. 大图/长视频先降级：压缩、切片、抽关键帧，别整坨硬塞。
@@ -30,17 +30,17 @@
 
 ## 常见错误
 
-- 把图发给纯文本模型（DeepSeek 非 Vision 版直接 400，其余硬答等于编）。
+- 把图发给纯文本模型（DeepSeek text-only route 直接拒收，其余硬答等于编——发前先查当前 catalog 的 input modalities）。
 - “这个视频讲了什么”丢给无视频能力的模型：它会按标题和常识编。
 - 转述界面而不贴图：信息损耗最大的一步。
 
 ## AI / 模型选择
 
-理解：Gemini（视频/音频唯一原生）→ Claude/GPT-6（图文）→ DeepSeek 仅 Vision 版。
+理解：Gemini（视频/音频唯一原生）→ Claude/GPT-6（图文）→ DeepSeek 选 catalog 中声明 image 的模型。
 UI/截图：Claude、GPT-6、Gemini。生成：各家专用图像/视频模型。
 
 ## Prompt
 
 [`05-prompts/prompt-library.md`](../05-prompts/prompt-library.md) → 先调查不执行（读图场景套用：只描述不下结论、标不确定）。
 
-Last reviewed: 2026-10-01
+Last reviewed: 2026-10-02

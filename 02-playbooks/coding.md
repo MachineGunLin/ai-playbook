@@ -41,9 +41,7 @@ spec（一句话目标+验收）→ plan（只读，审计划）→ implement（
 
 - 真值得：相互独立的多块任务（多目录重构、多模块调研、大 PR 分片审）、每块 >1000 token 且主任务不需要细节。
 - 会亏的：多 agent 同时写同一文件/同一 checkout（互相覆盖、测试打架）、需要共享全部上下文的强耦合任务、写操作为主的协作（读多写少才好拆；合成由单个主 agent 一次完成）。
-- worktree 配合：一块一 worktree、一块一分支/PR；同一时间一块代码只属于一个写作者。
-- 划边界：谁负责哪些文件/目录、输出格式（清单 or diff or 一页报告）、什么算完成；指令要具体到目标 + 格式 + 工具/来源，模糊指令必然重复劳动。
-- 汇总：只收结论 + 证据链接，不收全文；冲突人拍板，不让 agent 互相对话解决。
+- 隔离与汇总：worktree 隔离、划边界、只收摘要，完整细则见 [multi-agent.md](../03-agent-systems/multi-agent.md)。
 
 决策表：
 
@@ -95,7 +93,7 @@ spec（一句话目标+验收）→ plan（只读，审计划）→ implement（
 ## AI / 模型选择
 
 repo 级：Codex、Claude Code（Opus 系）→ Grok Build、OpenCode+强模型。
-有截图：vision 档（Gemini/Claude/GPT-6/Grok 主模型/DeepSeek Vision 版）。
+有截图：vision 档（Gemini/Claude/GPT-6/Grok 主模型/DeepSeek 按 catalog 选 image-capable 模型）。
 便宜大 context 纯文本：DeepSeek Harness。详见 [ai-agents.md](../01-tools/ai-agents.md)。
 
 ## Prompt
@@ -114,4 +112,4 @@ repo 级：Codex、Claude Code（Opus 系）→ Grok Build、OpenCode+强模型�
 - [Anthropic：多 agent 协调五模式（官方，2026-04）](https://claude.com/blog/multi-agent-coordination-patterns)
 - [Anthropic：多 agent 研究系统构建（官方，工作量配比）](https://www.anthropic.com/engineering/built-multi-agent-research-system)
 
-Last reviewed: 2026-10-01
+Last reviewed: 2026-10-02

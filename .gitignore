@@ -4,3 +4,5 @@
 *.key
 *.pem
 LOCAL_NOTES.md
+dist/
+*.epub
