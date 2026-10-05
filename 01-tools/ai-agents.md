@@ -66,7 +66,7 @@ DeepSeek？→ 先查当前 catalog/route 的 input modalities；text-only 发�
 | 上下文 | `/status` | `/context`；`/autocompact` | ? | ?（靠 `/compact`+`@`） | `/context`；`/session-info` | `/status`；`/trajectory` |
 | 压缩 | `/compact` | `/compact [说明]` | ? | `/compact`（`ctrl+x c`） | `/compact` | `/compact` |
 | 计划模式 | `/plan` | `/plan`；`Shift+Tab` | `/plan`；`/grill-me` | `plan` agent（Tab 切） | `/plan`；`/view-plan`；`/goal` | `/plan` |
-| 子任务 | `/agent`（细则 ?） | `/subtask`；`/fork`；`/branch` | `/agents` 面板 | agents 配置 + `subtask` | `/tasks`；`/fork`；`/workflows` | 运行时支持；管理命令 ? |
+| 子任务 | `/agent` · `/subagents`（切活动 subagent 线程） | `/subtask`；`/fork`；`/branch` | `/agents` 面板 | agents 配置 + `subtask` | `/tasks`；`/fork`；`/workflows` | 运行时支持；管理命令 ? |
 | 权限 | `/permissions`；`--sandbox`；`--yolo` | `/permissions` | 默认先问；`y`/`n` | 见官方 Permissions 页 | `/always-approve`；`/auto` | `/permissions <preset>` 三档 |
 | Shell | `!` 前缀 | `!` 开头 | 经 Agent 执行 | `!` 前缀 | 经 Agent 工具执行 | 经 Agent 执行 |
 | 文件引用 | `@路径`；`/mention`；`-i` 贴图 | `@路径`；`Option+K` | `@路径`；`ctrl+v` 贴截图/视频 | `@文件` | `@路径` | ?（以实测为准） |
@@ -84,6 +84,8 @@ DeepSeek？→ 先查当前 catalog/route 的 input modalities；text-only 发�
 | `/review` + `/diff` | 审工作区改动 |
 | `/mention <path>` / `@路径` / `-i` | 点名文件 / 贴图 |
 | `/status` · `/permissions` · `/ps`·`/stop` | 用量 / 权限 / 后台终端 |
+| `/agent` · `/subagents` | 切活动 subagent 线程，继续其工作 |
+| worktree + Handoff | 官方标准隔离流程：并行会话各占 worktree，Handoff 在 Local 与 Worktree 间移动 |
 | `!命令` | 跑本地 shell |
 
 ### Claude Code
@@ -142,11 +144,11 @@ DeepSeek？→ 先查当前 catalog/route 的 input modalities；text-only 发�
 
 ## 官方文档入口
 
-- Codex：[CLI slash](https://developers.openai.com/codex/cli/slash-commands) · [IDE slash](https://developers.openai.com/codex/ide/slash-commands) · [CLI 全命令](https://developers.openai.com/codex/cli/reference) · [最佳实践](https://developers.openai.com/codex/learn/best-practices)
+- Codex：[CLI slash](https://developers.openai.com/codex/cli/slash-commands) · [IDE slash](https://developers.openai.com/codex/ide/slash-commands) · [CLI 全命令](https://developers.openai.com/codex/cli/reference) · [最佳实践](https://developers.openai.com/codex/learn/best-practices) · [Git worktrees](https://developers.openai.com/codex/environments/git-worktrees)
 - Claude Code：[Commands](https://code.claude.com/docs/en/commands) · [Interactive mode](https://code.claude.com/docs/en/interactive-mode) · [Keybindings](https://code.claude.com/docs/en/keybindings) · [CLI](https://code.claude.com/docs/en/cli-reference) · [最佳实践](https://code.claude.com/docs/en/best-practices)
 - Antigravity：[Slash 总览](https://antigravity.google/docs/slash-commands/) · [CLI Reference](https://antigravity.google/docs/cli/reference/) · [最佳实践](https://antigravity.google/docs/cli/best-practices/) · [Rules](https://antigravity.google/docs/rules/)
 - OpenCode：[TUI](https://opencode.ai/docs/tui/) · [Commands](https://opencode.ai/docs/commands/) · [Agents](https://opencode.ai/docs/agents/) · [Permissions](https://opencode.ai/docs/permissions/)
 - Grok Build：[Overview](https://docs.x.ai/build/overview) · [Modes & Commands](https://docs.x.ai/build/modes-and-commands) · [Subagents](https://docs.x.ai/build/features/subagents)
 - DeepSeek Harness：官方 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) · 社区 [dsh-tui](https://github.com/nexlineai/dsh-tui)
 
-Last reviewed: 2026-10-02
+Last reviewed: 2026-10-05

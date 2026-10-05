@@ -71,7 +71,7 @@ spec（一句话目标+验收）→ plan（只读，审计划）→ implement（
 - `CLAUDE.md`/`AGENTS.md` 只放通用规则（200 行内），领域知识做 skills 按需加载（Claude 官方）。
 - 确定性动作写 hooks（lint、禁写目录、收尾检查），常用安全命令预放行入库，不要赌模型自觉（Claude 官方）。
 - 开工先立验证环：没测试先让它写测试块，再改再跑，盯着测试输出迭代（Antigravity 官方：最有效的一招）。
-- 便宜 subagent + 贵主 agent：只读探索用小模型，执行用强模型（OpenCode 社区验证模式）。
+- 便宜 subagent + 贵主 agent：只读探索任务显式路由到便宜模型，执行用强模型（OpenCode 社区验证模式）；别假设各家内置 Explore 自动便宜，按需自定覆盖。
 - 大扫荡描述一句话扇出上百 agent，后台跑完回一份总报告；跑顺存成团队 slash（Grok workflows 官方）。
 
 **社区（多人验证过，值得学）：**
@@ -89,6 +89,7 @@ spec（一句话目标+验收）→ plan（只读，审计划）→ implement（
 - 同一 checkout 开两个写作者：互相覆盖、测试打架。
 - 无限调查：查了 40 分钟没产出——先出 deliverable 形状（draft 优先），缺什么再补查。
 - 权限全开图省事：`--yolo`/danger 档只进一次性沙箱。
+- 绿了不等于过了：同一 diff 里动过测试、skip、断言或 grader，先看测试 diff 再认验收；实现者不能独占验收结论。
 
 ## AI / 模型选择
 
@@ -111,5 +112,7 @@ repo 级：Codex、Claude Code（Opus 系）→ Grok Build、OpenCode+强模型�
 - [Anthropic：何时用多 agent（官方，2026-01）](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them)
 - [Anthropic：多 agent 协调五模式（官方，2026-04）](https://claude.com/blog/multi-agent-coordination-patterns)
 - [Anthropic：多 agent 研究系统构建（官方，工作量配比）](https://www.anthropic.com/engineering/built-multi-agent-research-system)
+- [METR 前沿风险报告（删测试/骗 grader 的记录，独立机构）](https://www.metr.org/frontier-risk-report)
+- [开放式任务自发 reward hacking 实测（arXiv 2609.28614，独立研究）](https://arxiv.org/abs/2609.28614)
 
-Last reviewed: 2026-10-02
+Last reviewed: 2026-10-05

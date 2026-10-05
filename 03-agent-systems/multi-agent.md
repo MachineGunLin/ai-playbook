@@ -27,6 +27,7 @@
 - 主会话只做拆活和验收；subagent 回来只收摘要（结论 + 文件:行号 + 证据链），不收全文转述。
 - 交接用文件不用口头（见 [handoff.md](../04-recipes/handoff.md)），聊天记录不跨会话。
 - 两个 agent 结论冲突时，人拍板，不要让它们互相对话解决。
+- fan-out 上限是人的审查带宽：同时开着的写作者，不超过这次会逐份读完的 diff 数。
 
 ## 5. 各工具入口
 
@@ -37,4 +38,4 @@ Claude `/subtask`（回本会话）·`/fork`（后台）·`/batch`（仓库级�
 - 上下文保持干净见 [context.md](context.md)，跨会话落盘见 [memory.md](memory.md)。
 - 合并前审查见 [code-review.md](../04-recipes/code-review.md)，长任务见 [long-running-task.md](../04-recipes/long-running-task.md)。
 
-Last reviewed: 2026-10-01
+Last reviewed: 2026-10-05

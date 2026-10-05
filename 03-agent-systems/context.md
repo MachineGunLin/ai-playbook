@@ -8,6 +8,7 @@
 - 全仓漫游（上来就“看看这个 repo”，没点名文件）。
 - 常驻重服务（MCP 重服务每 turn 吃上万 token，不用就关）。
 - 同一问题开多 thread（推理链断了，每处重讲背景）。
+- 自定义 subagent 的 description 常驻父会话（Claude 官方：合计超 15,000 token 启动报警）；细节放正文，只在调用时加载。
 
 ## 铁律
 
@@ -16,6 +17,7 @@
 - 先点名再动手：先 `@` 点名文件，不要全仓漫游。
 - 一个任务一个 thread：同问题留同 thread 保推理链，真分叉才 fork；胀了就 compact（Codex 官方）。
 - 压缩是止血不是记忆：compaction 开自动 + 裁剪，但跨会话知识必须落盘（OpenCode 社区）。
+- 聊天里临时加的禁令过不了 compaction；要留下的写进会重读的 AGENTS.md / CLAUDE.md / rules，或用 PostCompact 类 hook 再注入。
 
 ## 各工具入口
 
@@ -27,4 +29,4 @@
 - 拆活边界见 [multi-agent.md](multi-agent.md)。
 - 换会话/换工具交接见 [04-recipes/handoff.md](../04-recipes/handoff.md)。
 
-Last reviewed: 2026-10-01
+Last reviewed: 2026-10-05
